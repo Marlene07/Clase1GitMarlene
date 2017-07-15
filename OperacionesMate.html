@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Hola</title>
+<style>
+/* Cambiando el estilo de algunos acomponentes de la pagina*/
+ fieldset{
+    border-style: solid;
+    border-color: blue;
+    border-radius: 5px }
+
+body {
+    background-color: lightblue; }
+
+h1 {
+    text-align: center;
+    text-decoration: underline; }
+
+.boton{
+    text-decoration: none;
+    padding: 2px;
+    font-weight: 500;
+    font-size: 15px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 7px;
+    border: 2px solid #0016b0;
+    font-size:17px;  }
+
+.text2 {
+    background-color: white;
+    border: 2px;
+    border-left: 4px solid blue;
+    width: 150px;
+    height: 20px;
+    border-radius: 7px; }
+
+.punto {
+ /*background-position: 0 -42px; width: 20px; height: 20px;*/
+  background-color: #fefefe;
+  border: 2px solid;
+  border-color: blue;
+  border-radius: 40px;
+  /*box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);*/
+  margin-right: 7px;
+  padding: 7px;
+  position: relative;
+ -webkit-appearance: none; }
+
+.abajo1-izq {
+  position: absolute;
+  top:  50px; 
+  left: 400px; }
+  
+h1{ color: blue;}
+
+</style>
+<title> Practicas </title>
+<script type="text/javascript">
+
+function Operaciones() {
+         opciones = document.formulario.opera; //acceso a los botones radio
+         for (i=0;i<opciones.length;i++) { //buscar el botón pulsado
+            if (opciones[i].checked == true) {
+               elegido = opciones[i].value
+               }
+            }
+
+         var n1 =Number(document.getElementById('txtN1').value);
+         var n2 =Number(document.getElementById('txtN2').value);
+         switch (elegido) { //elegir operacion según boton pulsado  
+        
+         case "suma":
+         var sumar = n1+n2;
+         document.getElementById('elegido').value = sumar;
+         break;
+          
+         case "resta":
+         var restar = n1-n2;
+         document.getElementById('elegido').value = restar;
+         break; 
+          
+         case "multiplicacion":
+         var multiplicar = n1*n2;
+         document.getElementById('elegido').value = multiplicar;
+         break;
+
+         case "division":
+         var divide = n1/n2;
+         document.getElementById('elegido').value = divide;
+         break;
+          }
+        }
+</script>
+<head>
+<body >
+<h1>Seleccionar la operacion a realizar </h1>
+<img class="abajo1-izq" src="http://3.bp.blogspot.com/-0sNxXkZwje0/UyZNGd42t-I/AAAAAAAAAGQ/c-j953LbJK4/s1600/suma2.gif">
+<form action="" name="formulario" >
+   <input type="radio" name="opera" value="suma"  class="punto"/><font size=5> Suma<font><br/>
+   <input type="radio" name="opera" value="resta"    class="punto"/> Resta <br/>
+   <input type="radio" name="opera" value="multiplicacion"  class="punto"  /> Multiplicación <br/>
+   <input type="radio" name="opera" value="division"  class="punto"  /> División <br/>
+   <br><br>
+      <fieldset>
+      <br><br>
+      <legend>Solo para niños </legend>
+
+      <label for = ""><font size=5> Primer Número: <font></label>
+        <input type="text" id="txtN1" class="text2"   >
+        <br><br>
+        <label for="">Segundo Número:</label>
+        <input type="text" id="txtN2"  class="text2" >
+        <br><br>
+        <label for="">Respuesta:</label>
+        <input type="text" id="elegido"  class="text2" >
+   <br><br>
+   <input type="button" onclick="Operaciones()" value="Calcular "  class="boton"/><br/><br/>
+   <input type="reset" value="Limpiar"   class="boton" /> 
+   <br><br>
+</fieldset>
+</body>
+</html>
